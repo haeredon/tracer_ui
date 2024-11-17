@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Traces API
+  description: Everything about network traces
+paths:
+  /traces:
+    get:
+      operationId: getTraces
+      description: Returns a list of traces
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: 'array'
+                items:
+                  $ref: '#/components/schemas/Trace'
+components:
+  schemas:
+    Trace:
+      type: object
+      properties:
+        something:
+          type: integer
